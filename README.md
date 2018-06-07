@@ -17,16 +17,4 @@ Certificate file could be imported to java with the following command:
 keytool -importcert -alias <alias> -keystore "%JAVA_HOME%\lib\security\cacerts" -storepass changeit -file mycert.pem
 
 
-The tool settings are stored in JiraMigration.jar:\BOOT-INF\classes\settings.properties and have the following format:
-
-importer.jira.url=https://jira.myjira1.com
-importer.jira.user=user
-importer.jira.password=password
-importer.jira.prefix=TST-
-
-exporter.jira.url=https://jira.myjira2.com
-exporter.jira.user=user
-exporter.jira.password=password
-exporter.jira.prefix=TST-
-
-destinationDir=C:\\Destination
+The settings are stored in JiraMigration.jar:\BOOT-INF\classes\settings.properties.
