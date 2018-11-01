@@ -16,5 +16,14 @@ There are multiple ways to get it:
 Certificate file could be imported to java with the following command:
 keytool -importcert -alias <alias> -keystore "%JAVA_HOME%\lib\security\cacerts" -storepass changeit -file mycert.pem
 
+OpenJDK:
+
+$ openssl x509 -in mycert.pem -inform pem -out mycert.der -outform der
+$ keytool -v -printcert -file mycert.der
+$ keytool -v -list -keystore \
+    $JAVA_HOME/jre/lib/security/cacerts 
+$ keytool -importcert -alias local-CA \
+    -keystore $JAVA_HOME/jre/lib/security/cacerts \
+    -file mycert.der
 
 The settings are stored in JiraMigration.jar:\BOOT-INF\classes\settings.properties.
